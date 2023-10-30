@@ -7,10 +7,6 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume" }
 )
--- Normal Mode
-vim.keymap.set("n", "L", "$")
-vim.keymap.set("n", "H", "^")
 
--- Visual Mode
-vim.keymap.set("v", "L", "$")
-vim.keymap.set("v", "H", "^")
+vim.keymap.set({ "v", "n" }, "L", "$")
+vim.keymap.set({ "v", "n" }, "H", "^")
