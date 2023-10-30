@@ -30,7 +30,7 @@
 			<key>Label</key>
 			<string></string>
 			<key>Text</key>
-			<string>\e:w \n</string>
+			<string>\e;w \n</string>
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
@@ -41,7 +41,7 @@
 			<key>Label</key>
 			<string></string>
 			<key>Text</key>
-			<string>:q!\n</string>
+			<string>;q!\n</string>
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>

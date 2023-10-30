@@ -10,3 +10,4 @@ vim.keymap.set(
 
 vim.keymap.set({ "v", "n" }, "L", "$")
 vim.keymap.set({ "v", "n" }, "H", "^")
+vim.keymap.set({ "v", "n" }, ";", ":")
