@@ -34,17 +34,6 @@
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
-		<key>0x77-0x100000-0xd</key>
-		<dict>
-			<key>Action</key>
-			<integer>38</integer>
-			<key>Label</key>
-			<string></string>
-			<key>Text</key>
-			<string>;q!\n</string>
-			<key>Version</key>
-			<integer>1</integer>
-		</dict>
 		<key>0x7a-0x100000-0x6</key>
 		<dict>
 			<key>Action</key>
@@ -318,6 +307,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Blend</key>
+			<real>0.49911260190217399</real>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -793,5 +784,7 @@
 	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 </dict>
 </plist>
