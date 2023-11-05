@@ -7,10 +7,20 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume" }
 )
+
 -- L and H go to end of line
 vim.keymap.set({ "v", "n" }, "H", "^")
 vim.keymap.set({ "v", "n" }, "L", "$")
-vim.keymap.set({ "v" }, "$", "y/<C-r>*")
+
+-- Yank current selection and search with that yank
+vim.keymap.set({ "v" }, "$", "y/<C-r>0")
+
+--  Case sensitive search and replace the current selections
+--  Visual Mode
+vim.keymap.set({ "v" }, "<C-$>", [[y:%s\C/<C-r>0/]])
+
+-- Normal Mode (select current word instead)
+vim.keymap.set({ "n" }, "<C-$>", [[yiw:%s\C/<C-r>0/]])
 
 -- so that delete and change work correctly with L and H
 vim.keymap.set({ "v", "n" }, "dL", "d$")
