@@ -15,6 +15,8 @@ vim.keymap.set({ "v", "n" }, "L", "$")
 -- Yank current selection and search with that yank
 vim.keymap.set({ "v" }, "$", "y/<C-r>0")
 
+-- mark the ' register for a easy jumpback
+vim.keymap.set({ "v", "n" }, "M", "m'")
 --  Case sensitive search and replace the current selections
 --  Visual Mode
 vim.keymap.set({ "v" }, "<C-$>", [[y:%s\C/<C-r>0/]])
@@ -32,7 +34,7 @@ vim.keymap.set({ "v", "n" }, "<", "^zz")
 vim.keymap.set({ "v", "n" }, "<C-d>", "<C-d>zz")
 vim.keymap.set({ "v", "n" }, "<C-u>", "<C-u>zz")
 vim.keymap.set({ "v", "n" }, "j", "jzz")
-
 vim.keymap.set({ "v", "n" }, "k", "kzz")
+
 -- faster commands
 vim.keymap.set({ "v", "n" }, ";", ":")

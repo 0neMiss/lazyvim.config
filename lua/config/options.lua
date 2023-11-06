@@ -7,3 +7,4 @@ vim.opt.winbar = "%=%m %f"
 -- Using smartcase for faster search
 vim.opt.ic = true
 vim.opt.smartcase = true
+vim.opt.rnu = false
