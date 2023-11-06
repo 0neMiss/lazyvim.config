@@ -25,12 +25,17 @@ vim.keymap.set({ "v" }, "<C-$>", [[y:%s/<C-r>0/]])
 -- Resize by 10% in both virtical and horozontal directions
 vim.keymap.set({ "n", "v" }, "+", "10<C-w>>10<C-w>+")
 vim.keymap.set({ "n", "v" }, "-", "10<C-w><10<C-w>-")
+
+-- Reset window sizes
 vim.keymap.set({ "n", "v" }, "<C-r>", "<C-w>=")
+
+-- Max out horozontal window size
 vim.keymap.set({ "n", "v" }, "<C-s-l>", "<C-w>|")
 vim.keymap.set({ "n", "v" }, "<C-s-h>", "<C-w>|")
+
+-- Max out virtical window size
 vim.keymap.set({ "n", "v" }, "<C-s-j>", "<C-w>_")
 vim.keymap.set({ "n", "v" }, "<C-s-k>", "<C-w>_")
-vim.keymap.set({ "n", "v" }, "<C-r>", "<C-w>=")
 
 -- Normal Mode (select current word instead)
 vim.keymap.set({ "n" }, "<C-$>", [[yiw:%s/<C-">0/]])
