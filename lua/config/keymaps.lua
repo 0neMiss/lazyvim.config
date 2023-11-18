@@ -47,12 +47,5 @@ vim.keymap.set({ "v", "n" }, "dH", "d^")
 vim.keymap.set({ "v", "n" }, "cL", "c$")
 vim.keymap.set({ "v", "n" }, "cH", "c^")
 
--- center the cursor (might be causing some weird issues in iterm)
-vim.keymap.set({ "v", "n" }, "<", "^zz")
-vim.keymap.set({ "v", "n" }, "<C-d>", "<C-d>zz")
-vim.keymap.set({ "v", "n" }, "<C-u>", "<C-u>zz")
-vim.keymap.set({ "v", "n" }, "j", "jzz")
-vim.keymap.set({ "v", "n" }, "k", "kzz")
-
 -- faster commands
 vim.keymap.set({ "v", "n" }, ";", ":")
