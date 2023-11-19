@@ -21,6 +21,13 @@ vim.keymap.set({ "v", "n" }, "M", "m'")
 --  Visual Mode
 vim.keymap.set({ "v" }, "<C-$>", [[y:%s/<C-r>0/]])
 
+vim.keymap.set({ "v", "n" }, "<C-s-t>", function()
+  local path = vim.fn.expand("%:r")
+  print(path)
+  local command = string.format("terminal nx run spectrum-news-web:test --testFile=%s.ts", path)
+  vim.cmd(command)
+end)
+
 -- Easy window resize commands
 -- Resize by 10% in both virtical and horozontal directions
 vim.keymap.set({ "n", "v" }, "+", "10<C-w>>10<C-w>+")
@@ -40,10 +47,9 @@ vim.keymap.set({ "n", "v" }, "<C-s-k>", "<C-w>_")
 -- Normal Mode (select current word instead)
 vim.keymap.set({ "n" }, "<C-$>", [[yiw:%s/<C-">0/]])
 
--- So that delete and change wo"k correctly with L and H
+-- So that delete and change work correctly with L and H
 vim.keymap.set({ "v", "n" }, "dL", "d$")
 vim.keymap.set({ "v", "n" }, "dH", "d^")
-
 vim.keymap.set({ "v", "n" }, "cL", "c$")
 vim.keymap.set({ "v", "n" }, "cH", "c^")
 
