@@ -11,6 +11,9 @@ vim.keymap.set(
 vim.keymap.set({ "v", "n" }, "H", "^")
 vim.keymap.set({ "v", "n" }, "L", "$")
 
+-- Go to last character of file with G instead of just the last line
+vim.keymap.set({ "v", "n" }, "G", "G$")
+
 -- Yank current selection and search with that yank
 vim.keymap.set({ "v" }, "$", "y/<C-r>0")
 
@@ -30,6 +33,9 @@ end)
 
 -- Run all jest tests
 vim.keymap.set({ "v", "n" }, "<leader>ta", ":terminal nx test spectrum-news-web\n")
+
+-- Run Lint
+vim.keymap.set({ "v", "n" }, "<leader>tl", ":terminal nx lint spectrum-news-web\n")
 
 -- Easy window resize commands
 -- Resize by 10% in both virtical and horozontal directions
