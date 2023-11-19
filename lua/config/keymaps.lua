@@ -21,12 +21,15 @@ vim.keymap.set({ "v", "n" }, "M", "m'")
 --  Visual Mode
 vim.keymap.set({ "v" }, "<C-$>", [[y:%s/<C-r>0/]])
 
-vim.keymap.set({ "v", "n" }, "<C-s-t>", function()
+-- Run a jest test for a specific file
+vim.keymap.set({ "v", "n" }, "<leader>tt", function()
   local path = vim.fn.expand("%:r")
-  print(path)
   local command = string.format("terminal nx run spectrum-news-web:test --testFile=%s.ts", path)
   vim.cmd(command)
 end)
+
+-- Run all jest tests
+vim.keymap.set({ "v", "n" }, "<leader>ta", ":terminal nx test spectrum-news-web\n")
 
 -- Easy window resize commands
 -- Resize by 10% in both virtical and horozontal directions
