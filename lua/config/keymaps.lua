@@ -12,7 +12,10 @@ vim.keymap.set({ "v", "n" }, "H", "^")
 vim.keymap.set({ "v", "n" }, "L", "$")
 
 -- Go to last character of file with G instead of just the last line
-vim.keymap.set({ "v", "n" }, "G", "G$")
+vim.keymap.set({ "v", "n" }, "G", "<C-End>")
+
+-- Go to first character of file with gg instead of first line
+vim.keymap.set({ "v", "n" }, "gg", ":0\n0")
 
 -- Yank current selection and search with that yank
 vim.keymap.set({ "v" }, "$", "y/<C-r>0")
