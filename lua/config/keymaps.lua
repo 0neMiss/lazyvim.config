@@ -29,6 +29,7 @@ vim.keymap.set({ "v" }, "<C-$>", [[y:%s/<C-r>0/]])
 
 -- Run a jest test for a specific file
 vim.keymap.set({ "v", "n" }, "<leader>tt", function()
+  -- grab the path to the current file from the root of the cwd
   local path = vim.fn.expand("%:r")
   local command = string.format("terminal nx run spectrum-news-web:test --testFile=%s.ts", path)
   vim.cmd(command)
@@ -42,8 +43,8 @@ vim.keymap.set({ "v", "n" }, "<leader>tl", ":terminal nx lint spectrum-news-web\
 
 -- Easy window resize commands
 -- Resize by 10% in both virtical and horozontal directions
-vim.keymap.set({ "n", "v" }, "+", "10<C-w>>10<C-w>+")
-vim.keymap.set({ "n", "v" }, "-", "10<C-w><10<C-w>-")
+vim.keymap.set({ "n", "v" }, "+", "15<C-w>>15<C-w>+")
+vim.keymap.set({ "n", "v" }, "-", "15<C-w><15<C-w>-")
 
 -- Reset window sizes
 vim.keymap.set({ "n", "v" }, "<C-r>", "<C-w>=")

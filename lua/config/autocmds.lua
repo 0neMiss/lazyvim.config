@@ -3,6 +3,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 
 -- Resize a windows when i enter them
+-- TODO figure out how to resize the neo-tree as well
 vim.api.nvim_create_autocmd({ "WinEnter" }, {
   callback = function()
     vim.cmd([[execute "normal \<C-w>="]])
