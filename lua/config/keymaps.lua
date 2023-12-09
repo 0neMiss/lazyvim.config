@@ -8,8 +8,8 @@ vim.keymap.set(
 )
 
 -- L and H go to end of line
-vim.keymap.set({ "v", "n" }, "H", "^")
-vim.keymap.set({ "v", "n" }, "L", "$")
+vim.keymap.set({ "v", "n", "o" }, "H", "^")
+vim.keymap.set({ "v", "n", "o" }, "L", "$")
 
 -- Go to last character of file with G instead of just the last line
 vim.keymap.set({ "v", "n" }, "G", "<C-End>")
