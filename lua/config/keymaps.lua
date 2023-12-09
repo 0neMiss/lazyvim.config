@@ -70,14 +70,15 @@ vim.keymap.set({ "v", "n" }, "dH", "d^")
 vim.keymap.set({ "v", "n" }, "cL", "c$")
 vim.keymap.set({ "v", "n" }, "cH", "c^")
 
--- faster commands
+-- Faster commands
 vim.keymap.set({ "v", "n" }, ";", ":")
 
 -- Preview markdown if we are in a markdown file
 vim.keymap.set({ "n" }, "<leader>m", function()
   limitCmdByExtension("MarkdownPreview", ".md")
 end)
--- Stop preview
+
+-- Stop preview of markdown files
 vim.keymap.set({ "n" }, "<leader>M", function()
   limitCmdByExtension("MarkdownPreviewStop", ".md")
 end)
