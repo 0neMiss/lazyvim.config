@@ -1,5 +1,12 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+local limitCmdByExtension = function(command, extension)
+  local currentFileExtension = string.match(vim.fn.expand("%"), "^.+(%..+)$")
+  if currentFileExtension == extension then
+    vim.cmd(command)
+  end
+end
+
 vim.keymap.set(
   "n",
   "<leader>sx",
@@ -12,15 +19,15 @@ vim.keymap.set({ "v", "n", "o" }, "H", "^")
 vim.keymap.set({ "v", "n", "o" }, "L", "$")
 
 -- Go to last character of file with G instead of just the last line
-vim.keymap.set({ "v", "n" }, "G", "<C-End>")
+vim.keymap.set({ "v", "n", "o" }, "G", "<C-End>")
 
 -- Go to first character of file with gg instead of first line
-vim.keymap.set({ "v", "n" }, "gg", ":0\n0")
+vim.keymap.set({ "v", "n" }, "gg", function() end)
 
 -- Yank current selection and search with that yank
 vim.keymap.set({ "v" }, "$", "y/<C-r>0")
 
--- mark the ' register for a easy jumpback
+-- Mark the ' register for a easy jumpback
 vim.keymap.set({ "v", "n" }, "M", "m'")
 
 --  Search and replace the current selections
@@ -29,7 +36,7 @@ vim.keymap.set({ "v" }, "<C-$>", [[y:%s/<C-r>0/]])
 
 -- Run a jest test for a specific file
 vim.keymap.set({ "v", "n" }, "<leader>tt", function()
-  -- grab the path to the current file from the root of the cwd
+  -- Grab the path to the current file from the root of the cwd
   local path = vim.fn.expand("%:r")
   local command = string.format("terminal nx run spectrum-news-web:test --testFile=%s.ts", path)
   vim.cmd(command)
@@ -68,3 +75,12 @@ vim.keymap.set({ "v", "n" }, "cH", "c^")
 
 -- faster commands
 vim.keymap.set({ "v", "n" }, ";", ":")
+
+-- Preview markdown if we are in a markdown file
+vim.keymap.set({ "n" }, "<leader>m", function()
+  limitCmdByExtension("MarkdownPreview", ".md")
+end)
+-- Stop preview
+vim.keymap.set({ "n" }, "<leader>M", function()
+  limitCmdByExtension("MarkdownPreviewStop", ".md")
+end)
