@@ -64,12 +64,6 @@ vim.keymap.set({ "n", "v" }, "<C-s-k>", "<C-w>_")
 -- Normal Mode (select current word instead)
 vim.keymap.set({ "n" }, "<C-$>", [[yiw:%s/<C-">0/]])
 
--- So that delete and change work correctly with L and H
-vim.keymap.set({ "v", "n" }, "dL", "d$")
-vim.keymap.set({ "v", "n" }, "dH", "d^")
-vim.keymap.set({ "v", "n" }, "cL", "c$")
-vim.keymap.set({ "v", "n" }, "cH", "c^")
-
 -- Faster commands
 vim.keymap.set({ "v", "n" }, ";", ":")
 
