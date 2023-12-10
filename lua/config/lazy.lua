@@ -14,7 +14,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.alpha" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {
       "kdheepak/lazygit.nvim",
       -- optional for floating window border decoration
