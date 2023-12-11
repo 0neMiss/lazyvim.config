@@ -69,9 +69,9 @@ vim.keymap.set({ "v", "n" }, ";", ":")
 -- Preview markdown if we are in a markdown file
 vim.keymap.set({ "n" }, "<leader>m", function()
   limitCmdByExtension("MarkdownPreview", ".md")
-end)
+end, { desc = "Start MarkdownPreview" })
 
 -- Stop preview of markdown files
 vim.keymap.set({ "n" }, "<leader>M", function()
   limitCmdByExtension("MarkdownPreviewStop", ".md")
-end)
+end, { desc = "Stop MarkdownPreview" })
