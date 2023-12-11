@@ -49,7 +49,6 @@ vim.keymap.set({ "v", "n" }, "<leader>tl", ":terminal nx lint spectrum-news-web\
 -- Resize by 10% in both virtical and horozontal directions
 vim.keymap.set({ "n", "v" }, "+", "15<C-w>>15<C-w>+")
 vim.keymap.set({ "n", "v" }, "-", "15<C-w><15<C-w>-")
-
 -- Reset window sizes
 vim.keymap.set({ "n", "v" }, "<C-r>", "<C-w>=")
 
