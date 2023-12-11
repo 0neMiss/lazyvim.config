@@ -75,3 +75,6 @@ end, { desc = "Start MarkdownPreview" })
 vim.keymap.set({ "n" }, "<leader>M", function()
   limitCmdByExtension("MarkdownPreviewStop", ".md")
 end, { desc = "Stop MarkdownPreview" })
+
+-- Hide all messages onscreen
+vim.keymap.set({ "v", "n" }, "<C-PageUp>", ":Noice dismiss\n")
