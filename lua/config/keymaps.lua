@@ -39,6 +39,16 @@ vim.keymap.set({ "v", "n" }, "<leader>tt", function()
   vim.cmd(command)
 end)
 
+-- disable linter diagnostics in the current buffer
+vim.keymap.set({ "v", "n" }, "<leader>xd", function()
+  vim.diagnostic.disable()
+end)
+
+-- enable linter diagnostics in the current buffer
+vim.keymap.set({ "v", "n" }, "<leader>xe", function()
+  vim.diagnostic.enable()
+end)
+
 -- Run all jest tests
 vim.keymap.set({ "v", "n" }, "<leader>ta", ":terminal nx test spectrum-news-web\n")
 
